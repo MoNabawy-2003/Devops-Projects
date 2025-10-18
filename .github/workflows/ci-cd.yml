@@ -5,12 +5,11 @@ on:
     branches: [ "main" ]
 
 env:
-  IMAGE_NAME: monabawi/my-tech-app 
+  IMAGE_NAME: monabawi/my-tech-app
 
 jobs:
   build_and_push:
-    runs-on: self-hosted 
-    
+    runs-on: self-hosted
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -28,18 +27,19 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: ./my-tech-app/Dockerfile 
+          file: ./my-tech-app/Dockerfile
           push: true
           tags: |
             ${{ env.IMAGE_NAME }}:${{ env.SHA }}
             ${{ env.IMAGE_NAME }}:latest
-            
-      outputs:
-        sha: ${{ env.SHA }}
+    
+    # change
+    outputs:
+      sha: ${{ env.SHA }}
 
   deploy_to_k8s:
     needs: build_and_push
-    runs-on: self-hosted 
+    runs-on: self-hosted
     
     steps:
       - name: Checkout Code
