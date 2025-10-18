@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-tech-app-deployment  
+spec:
+  replicas: 3 
+  selector:
+    matchLabels:
+      app: my-tech-app          
+  template:
+    metadata:
+      labels:
+        app: my-tech-app        
+    spec:
+      containers:
+      - name: my-tech-app-container 
+        image: monabawi/my-tech-app 
+        ports:
+        - containerPort: 5000 
+        env:
+        - name: APP_VERSION 
+          value: "1.0.0" 
