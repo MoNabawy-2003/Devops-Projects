@@ -1,4 +1,4 @@
-End-to-End CI/CD Pipeline (Python, Docker, Kubernetes) 🚀
+# End-to-End CI/CD Pipeline (Python, Docker, Kubernetes) 🚀
 This repository is a practical demonstration of a complete CI/CD (Continuous Integration & Continuous Deployment) pipeline. The goal is to fully automate the process of building, containerizing, and deploying a Python (Flask) web application to a Kubernetes cluster (Minikube) as soon as new code is pushed.
 
 ⚙️ Tech Stack
